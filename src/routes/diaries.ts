@@ -15,6 +15,8 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (_req, res) => {
+    // const { id, date, weather, visibility } = req.body
+
     res.send('Saving a diary')
 })
 
