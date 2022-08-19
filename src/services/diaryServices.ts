@@ -6,6 +6,20 @@ const diaries: DiaryEntry[] = diaryData as DiaryEntry[] //<-- Aserción de tipos
 //DiaryEntry[] = Array<DiaryEntry>
 export const getEntries = (): DiaryEntry[] => diaries
 
-export const getEntriesWithoutSensitiveInfo = (): NonSensitiveInfoDiaryEntry[] => diaries
+export const finById = (id: number): DiaryEntry | undefined => {
+    const entry = diaries.find(e => e.id === id)
+    return entry
+}
+
+export const getEntriesWithoutSensitiveInfo = (): NonSensitiveInfoDiaryEntry[] => {
+    return diaries.map(({ id, date, weather, visibility }) => {
+        return {
+            id,
+            date,
+            weather,
+            visibility
+        }
+    })
+}
 
 export const addEntry = () => null
