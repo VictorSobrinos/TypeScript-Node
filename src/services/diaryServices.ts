@@ -6,8 +6,12 @@ const diaries: DiaryEntry[] = diaryData as DiaryEntry[] //<-- Aserción de tipos
 //DiaryEntry[] = Array<DiaryEntry>
 export const getEntries = (): DiaryEntry[] => diaries
 
-export const finById = (id: number): DiaryEntry | undefined => {
+export const finById = (id: number): NonSensitiveInfoDiaryEntry | undefined => {
     const entry = diaries.find(e => e.id === id)
+    if (entry) {
+        const { comment, ...noCommentDiary } = entry
+        return noCommentDiary
+    }
     return entry
 }
 
