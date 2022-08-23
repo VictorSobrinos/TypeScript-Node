@@ -1,4 +1,4 @@
-import { DiaryEntry, NonSensitiveInfoDiaryEntry } from '../type'
+import { DiaryEntry, newDiaryEntry, NonSensitiveInfoDiaryEntry } from '../type'
 import diaryData from './diaries.json'
 //"resolveJsonModule": true --> added in the config file to be able to read json file
 
@@ -26,4 +26,13 @@ export const getEntriesWithoutSensitiveInfo = (): NonSensitiveInfoDiaryEntry[] =
     })
 }
 
-export const addEntry = () => null
+export const addDiary = (newDiaryEntry: newDiaryEntry): DiaryEntry => {
+    console.log('esto es newDiary', newDiaryEntry)
+    const newDiary = {
+        id: Math.max(...diaries.map(d => d.id)) + 1,
+        ...newDiaryEntry
+    }
+
+    diaries.push(newDiary)
+    return newDiary
+}
