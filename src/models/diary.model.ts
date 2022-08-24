@@ -13,10 +13,12 @@ const diarySchema = new Schema({
         default: 'No date provided'
     },
     visibility: {
-        type: String
+        type: String,
+        default: 'No date provided'
     },
     comment: {
-        type: String
+        type: String,
+        default: 'No date provided'
     }
 })
 
