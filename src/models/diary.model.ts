@@ -5,7 +5,8 @@ const diarySchema = new Schema({
         type: Number
     },
     date: {
-        type: String
+        type: String,
+        default: 'No date provided'
     },
     weather: {
         type: String

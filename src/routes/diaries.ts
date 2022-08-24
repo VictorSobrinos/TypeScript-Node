@@ -2,6 +2,7 @@ import express from 'express' //ESModules(import and export)
 //const express = require('express)--> commonjs
 import * as diaryServices from '../services/diaryServices'
 import toNewDiaryEntry from '../utils'
+// import Diary from '../models/diary.model'
 
 const router = express.Router()
 
