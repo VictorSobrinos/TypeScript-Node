@@ -9,7 +9,8 @@ const diarySchema = new Schema({
         default: 'No date provided'
     },
     weather: {
-        type: String
+        type: String,
+        default: 'No date provided'
     },
     visibility: {
         type: String
